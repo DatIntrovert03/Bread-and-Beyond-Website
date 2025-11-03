@@ -1,0 +1,139 @@
+/* Queries.css
+   Mobile and responsive overrides for Bread-and-Beyond Website
+   Mobile-first: base styles should work, these rules compress and stack
+*/
+
+/* Make images and media fluid */
+img, .card--image, .information--img, .main-icon img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive container */
+.container {
+  width: 95%;
+  max-width: 130rem; /* preserves desktop max width */
+  margin: 0 auto;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  box-sizing: border-box;
+}
+
+/* Header adjustments */
+header {
+  padding: 2rem 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.main-icon img {
+  max-height: 6rem;
+  width: auto;
+}
+
+.main-navigation .links {
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Hero adjustments */
+.hero--container {
+  height: 60vh;
+  background-position: center;
+}
+
+.hero-textbox {
+  width: 92%;
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: none;
+  margin: 2.4rem auto;
+  text-align: center;
+}
+
+/* Grid collapse for two-column sections */
+.grid--two--columns {
+  grid-template-columns: 1fr;
+  gap: 3.2rem;
+}
+
+/* Products layout: allow wrapping and scaling */
+.product--card--container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.4rem;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.product--card {
+  width: 90%;
+  max-width: 36rem;
+  height: auto;
+}
+
+.card--image {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Form layout stacks */
+.form--container {
+  width: 100%;
+  grid-template-columns: 1fr;
+  margin: 2.4rem auto;
+}
+
+.form--box {
+  padding: 2.4rem;
+}
+
+.form--head {
+  font-size: 3.2rem;
+}
+
+/* Footer stacks */
+footer.grid--four--columns {
+  grid-template-columns: 1fr;
+  gap: 2.4rem;
+  padding: 4rem 0;
+}
+
+/* Typography scaling for smaller viewports */
+h1 { font-size: 4.8rem; }
+h2 { font-size: 3.2rem; }
+p, .information-text, .product--name, .product--price { font-size: 1.6rem; }
+
+/* Smaller navigation text */
+.nav--link:link, .nav--link:visited { font-size: 1.6rem; }
+
+/* Small devices specific tweaks */
+@media (max-width: 480px) {
+  .main-navigation .links { gap: 1rem; }
+  .hero--container { height: 50vh; }
+  h1 { font-size: 3.6rem; }
+  h2 { font-size: 2.8rem; }
+  .form--head { font-size: 2.4rem; }
+  .card__btn { width: auto; padding: 1.2rem 1.6rem; font-size: 1.6rem; }
+  .product--icon, .socialmediaicons { height: 3rem; width: 3rem; }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .grid--two--columns { grid-template-columns: 1fr; }
+  .product--card { max-width: 32rem; }
+  h1 { font-size: 5.6rem; }
+  h2 { font-size: 4rem; }
+}
+
+/* Larger devices: keep desktop defaults but ensure images don't overflow */
+@media (min-width: 769px) {
+  .container { width: 120rem; }
+}
+
+/* Utility: ensure long text wraps on small screens */
+.information-text, p { word-wrap: break-word; }
